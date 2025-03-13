@@ -1,0 +1,14 @@
+Table,"Create Table"
+missions,"CREATE TABLE `missions` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `player_id` int NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` text,
+  `deadline` datetime DEFAULT NULL,
+  `xp_reward` int DEFAULT '0',
+  `completed` tinyint(1) DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `missions_ibfk_1` (`player_id`),
+  CONSTRAINT `missions_ibfk_1` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci"
