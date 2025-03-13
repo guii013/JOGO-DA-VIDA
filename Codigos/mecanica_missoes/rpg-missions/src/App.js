@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 function App() {
-  const [data, setData] = useState("");
+  const [data, setData] = useState("http://localhost/jogo_da_vida/test-db.php");
 
   useEffect(() => {
     axios
       .get("http://localhost/jogo_da_vida/test-db.php")
       .then((response) => setData(response.data))
-      .catch((error) => setData("Erro ao conectar ao backend"));
+      .catch((error) => setData("erro!!"));
   }, []);
 
   return (
